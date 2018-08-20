@@ -1,0 +1,6 @@
+
+data/zip.train
+data/zip.test
+.DS_Store
+.ipynb_checkpoints/Descriptive Analysis Notebook-checkpoint.ipynb
+.ipynb_checkpoints/Week 1 Project Notebook-checkpoint.ipynb
