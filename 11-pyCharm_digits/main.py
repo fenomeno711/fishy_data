@@ -6,7 +6,7 @@ import evaluation
 
 
 if __name__ == '__main__':
-    data_train = pd.read_csv("data/zip.train", header = None, sep =" ")
+    data_train = pd.read_csv("../data/zip.train", header = None, sep =" ")
     cleaned_train_data = data_train.dropna(axis=1, thresh=2)
 
     input_data = cleaned_train_data.iloc[:, 1:].values
