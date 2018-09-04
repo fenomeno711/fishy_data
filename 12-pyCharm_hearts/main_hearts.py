@@ -1,13 +1,38 @@
-import pandas as pd
-import classifier
+import loader
+import features
 import sklearn.linear_model as lm
-import features.zip_codes
+import classifier
+
+import pandas as pd
+
+
+
 import evaluation
 
 
 if __name__ == '__main__':
-    raw_data = pd.read_csv("../data/heart/Heart.csv", header = None, sep =" ")
-    print(raw_data)
+
+    raw_data = loader.load("../data/heart/Heart.csv")
+
+    clean_data = features.clean(raw_data)
+
+    data_train,data_test = features.split(clean_data,0.2)
+
+    X_train, y_train, X_test, y_test = features.set_target(data_train, data_test, 'AHD')
+
+    logReg = lm.LogisticRegression()
+
+    classifier.fit(logReg, X_train, y_train)
+
+    pred, pred_proba = classifier.predict(logreg, X_test)
+
+    evaluation.print_errors(y_test, pred)
+
+    #print(len(data_train), len(data_test))
+
+
+
+    #print(clean_data)
     # cleaned_train_data = data_train.dropna(axis=1, thresh=2)
     #
     # input_data = cleaned_train_data.iloc[:, 1:].values
