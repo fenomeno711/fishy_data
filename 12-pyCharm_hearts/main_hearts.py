@@ -15,16 +15,19 @@ if __name__ == '__main__':
     raw_data = loader.load("../data/heart/Heart.csv")
 
     clean_data = features.clean(raw_data)
+    clean_data = features.encode_binary(clean_data)
+    clean_data = features.encode_category(clean_data, 'ChestPain')
+    clean_data = features.encode_category(clean_data, 'Thal')
 
     data_train,data_test = features.split(clean_data,0.2)
 
     X_train, y_train, X_test, y_test = features.set_target(data_train, data_test, 'AHD')
 
     logReg = lm.LogisticRegression()
-
+    print(clean_data.head())
     classifier.fit(logReg, X_train, y_train)
 
-    pred, pred_proba = classifier.predict(logreg, X_test)
+    pred, pred_proba = classifier.predict(logReg, X_test)
 
     evaluation.print_errors(y_test, pred)
 
