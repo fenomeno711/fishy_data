@@ -1,0 +1,8 @@
+<keymap version="1" name="Mac OS X copy" parent="Mac OS X">
+  <action id="ToggleDistractionFreeMode">
+    <keyboard-shortcut first-keystroke="ctrl meta alt d" />
+  </action>
+  <action id="TogglePresentationMode">
+    <keyboard-shortcut first-keystroke="ctrl meta alt p" />
+  </action>
+</keymap>
