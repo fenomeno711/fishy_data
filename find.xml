@@ -1,7 +1,7 @@
 <application>
   <component name="FindSettings">
-    <option name="customScope" value="File '.../random_forest.py [pytorch_team2]'" />
-    <option name="defaultScopeName" value="File '.../random_forest.py [pytorch_team2]'" />
-    <option name="SEARCH_SCOPE" value="File '.../random_forest.py [pytorch_team2]'" />
+    <option name="customScope" value="Project 'pytorch_team_2'" />
+    <option name="defaultScopeName" value="Project 'pytorch_team_2'" />
+    <option name="SEARCH_SCOPE" value="Project 'pytorch_team_2'" />
   </component>
 </application>
